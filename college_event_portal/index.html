@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover and register for exciting campus events." />
+  <title>CampusLive — College Event Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="CampusLive home"><span class="brand-mark">C</span> campus<span>live.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a class="active" href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+      </div>
+      <a class="nav-cta" href="#events">Explore events <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> YOUR CAMPUS. YOUR MOMENT.</div>
+          <h1>Make campus<br>life <span>unforgettable.</span></h1>
+          <p>Find your people, discover your passion, and show up for the moments worth remembering.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#events">Discover events <span>↗</span></a>
+            <a class="button button-quiet" href="#categories">Browse categories <span>↓</span></a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>24<span>+</span></strong><small>Events this month</small></div>
+            <i></i>
+            <div><strong>1.8<span>k</span></strong><small>Student community</small></div>
+            <i></i>
+            <div><strong>12</strong><small>Clubs & societies</small></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-card visual-back">
+            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=85" alt="Crowd enjoying a live music performance">
+          </div>
+          <div class="visual-card visual-front">
+            <div class="mini-label"><span class="live-dot"></span> CAMPUS SPOTLIGHT</div>
+            <div class="spotlight-content"><span class="spotlight-date">NOV <b>08</b></span><div><h3>Pulse Fest '26</h3><p>Music • Culture • Community</p></div></div>
+          </div>
+          <div class="floating-note"><span class="note-icon">✦</span><div><b>Good vibes ahead</b><small>Find your next favorite memory</small></div></div>
+          <div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span><span>01 — 04</span></div>
+    </section>
+
+    <section class="category-section section-pad" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <div><div class="eyebrow dark-eyebrow">FIND YOUR SCENE</div><h2>Something for <span>everyone.</span></h2></div>
+          <p>From big-stage energy to curious minds—<br>there's a place for you here.</p>
+        </div>
+        <div class="category-grid">
+          <button class="category-card selected" data-category="All"><span class="category-icon">✦</span><span><b>All events</b><small>Everything happening</small></span><span class="category-arrow">↗</span></button>
+          <button class="category-card" data-category="Technical"><span class="category-icon violet">⌘</span><span><b>Technical</b><small>Build. Learn. Innovate.</small></span><span class="category-arrow">↗</span></button>
+          <button class="category-card" data-category="Cultural"><span class="category-icon orange">♫</span><span><b>Cultural</b><small>Celebrate your vibe</small></span><span class="category-arrow">↗</span></button>
+          <button class="category-card" data-category="Sports"><span class="category-icon green">⚡</span><span><b>Sports</b><small>Play for the glory</small></span><span class="category-arrow">↗</span></button>
+          <button class="category-card" data-category="Workshop"><span class="category-icon blue">✎</span><span><b>Workshops</b><small>Pick up a new skill</small></span><span class="category-arrow">↗</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="events-section section-pad" id="events">
+      <div class="container">
+        <div class="section-heading events-heading">
+          <div><div class="eyebrow dark-eyebrow">MARK YOUR CALENDAR</div><h2>Upcoming <span>events.</span></h2></div>
+          <div class="event-tools"><label class="search-box"><span>⌕</span><input type="search" id="searchInput" placeholder="Search events..." aria-label="Search events"></label>
+            <select id="sortSelect" aria-label="Sort events"><option value="date">Date: soonest</option><option value="name">Name: A–Z</option></select>
+          </div>
+        </div>
+        <div class="event-count"><span id="eventCount">6 EVENTS</span><span>Curated for your campus experience</span></div>
+        <div class="events-grid" id="eventsGrid"></div>
+        <div class="empty-state" id="emptyState" hidden><div>✦</div><h3>No events found</h3><p>Try a different keyword or category.</p><button class="button button-primary" id="resetFilters">Reset filters</button></div>
+      </div>
+    </section>
+
+    <section class="join-banner" id="about">
+      <div class="container join-inner">
+        <div><div class="eyebrow"><span class="live-dot"></span> YOUR NEXT CHAPTER STARTS HERE</div><h2>Don't just attend.<br><span>Be part of it.</span></h2><p>Show up curious. Leave with stories.</p></div>
+        <a class="button button-light" href="#events">Find your next event <span>↗</span></a>
+        <div class="banner-decoration">✳</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main"><a class="brand footer-brand" href="#home"><span class="brand-mark">C</span> campus<span>live.</span></a><p>Bringing campus communities together, one event at a time.</p><div class="footer-links"><a href="#home">Home</a><a href="#events">Events</a><a href="#categories">Categories</a><a href="mailto:events@example.edu">Contact</a></div></div>
+    <div class="container footer-bottom"><span>© 2026 CampusLive. Student project demo.</span><span>Made for campus, with <b>♥</b></span></div>
+  </footer>
+
+  <dialog id="registerDialog" class="register-dialog">
+    <button class="dialog-close" id="closeDialog" aria-label="Close registration">×</button>
+    <div class="dialog-top"><span class="dialog-kicker">SAVE YOUR SPOT</span><div class="dialog-icon">✦</div><h2>You're on the list.</h2><p id="dialogEventName">Register for an event</p></div>
+    <form id="registerForm">
+      <input type="hidden" id="eventId" name="eventId">
+      <label>Full name<input required name="fullName" placeholder="Your name" autocomplete="name"></label>
+      <label>Student email<input required name="email" type="email" placeholder="you@college.edu" autocomplete="email"></label>
+      <label>Student ID<input required name="studentId" placeholder="e.g. 26XXXXXX"></label>
+      <button class="button button-primary submit-button" type="submit">Confirm registration <span>↗</span></button>
+      <small class="form-note">Demo registration: details stay in this browser only.</small>
+    </form>
+    <div class="success-message" id="successMessage" hidden><div>✓</div><h3>Registration confirmed!</h3><p id="successText"></p><button class="button button-primary" id="doneButton">Awesome</button></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
